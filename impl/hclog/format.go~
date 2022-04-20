@@ -1,5 +1,0 @@
-package hclog
-
-func (l Logger) IsPlain() bool {
-	return true // !l.json
-}
