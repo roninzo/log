@@ -1,0 +1,12 @@
+package logrus
+
+import "github.com/sirupsen/logrus"
+
+func (l Logger) IsPlain() bool {
+	switch l.logger.Formatter.(type) {
+	case *logrus.TextFormatter:
+		return true
+	default:
+		return false
+	}
+}

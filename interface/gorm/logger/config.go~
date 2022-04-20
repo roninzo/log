@@ -1,0 +1,23 @@
+package logger
+
+import (
+	"time"
+
+	"gorm.io/gorm/logger"
+)
+
+type Config struct {
+	SlowThreshold             time.Duration   // Threshold for slow SQL queries.
+	LogLevel                  logger.LogLevel // Desired level of logging.
+	IgnoreRecordNotFoundError bool            // Ignore RecordNotFound Error.
+	Colorful                  bool            // Colorize output when enabled.
+}
+
+var (
+	defaultConfig = Config{
+		SlowThreshold:             200 * time.Millisecond,
+		LogLevel:                  logger.Warn,
+		IgnoreRecordNotFoundError: false,
+		Colorful:                  true,
+	}
+)

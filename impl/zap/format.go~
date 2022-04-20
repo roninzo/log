@@ -1,0 +1,5 @@
+package zap
+
+func (l Logger) IsPlain() bool {
+	return true // zapcore.enc (Encoder)
+}

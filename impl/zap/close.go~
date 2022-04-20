@@ -1,0 +1,5 @@
+package zap
+
+func (l Logger) Close() error {
+	return l.logger.Sync()
+}

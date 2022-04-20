@@ -1,0 +1,20 @@
+package zap
+
+import "go.uber.org/zap/zaptest/observer"
+
+func (l *Logger) Named(prefix ...string) string {
+	if len(prefix) > 0 {
+		l.addName(prefix[0])
+	}
+	return l.getName()
+}
+
+func (l Logger) getName() string {
+	// return l.logger.LoggerName
+	var logs *observer.ObservedLogs
+	return logs.AllUntimed()[0].LoggerName
+}
+
+func (l *Logger) addName(prefix string) {
+	l.logger = l.logger.Named(prefix)
+}
