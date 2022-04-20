@@ -1,5 +1,0 @@
-package logger
-
-func (l Logger) IsPlain() bool {
-	return true
-}
