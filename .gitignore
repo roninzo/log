@@ -1,0 +1,6 @@
+*.lnk
+*.exe
+*.zip
+*~
+.vscode/
+desktop.ini
